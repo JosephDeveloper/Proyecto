@@ -20,12 +20,13 @@ class Index extends Controllers
         if ($userName != ""){
             header("Location: " .URL. "User/Principal/principal");
         }else{
-            $this->view->render($this,'index','');
+            $this->view->render('Home', $this,'index','');
         }
         //var_dump($this->view);
     }
-
+    /*
     public function sigIn(){
         $this->view->render($this,'sigIn','');
     }
+    */
 }

@@ -11,7 +11,7 @@
 	<div class="panel-group">
 		<div class="panel-primary">
 			<div class="panel-heading text-center" style="font-size: 25px;">
-				Registrarse
+				Crear
 			</div>
 			<div class="panel-body panel-body-registarse">
 				<div class="panel-group col-sm-12">
@@ -110,7 +110,7 @@
 								</div>
 								<div class="panel-body">
 									<div class="col-sm-4 col-xs"></div>
-									<button class="btn btn-primary col-sm-4 col-xs-12" type="submit" id="signin">Registrar</button>										
+									<button class="btn btn-primary col-sm-4 col-xs-12" type="submit" id="crear">Crear</button>										
 								</div>
 							</div>
 						</form>
@@ -122,10 +122,10 @@
 </div>
 
 <script>
-	$(document).ready(sigIn);
+	$(document).ready(crearPersona);
 
 	$(function(){
-		$('#signin').click(function(){			
+		$('#crear').click(function(){			
 			var name = $('form[name=Registrar] input[name=name]')[0].value;
 			var name_2 = $('form[name=Registrar] input[name=name_2]')[0].value;
 			var lastName = $('form[name=Registrar] input[name=lastName]')[0].value;
@@ -142,18 +142,19 @@
 			var rol = $('form[name=Registrar] select[name=rol]')[0].value;
 
 			if (name == "" || lastName == "" || documento == "" || direccion == "" || telefono == "" || celular == "" || email == "" || pass == "" || instituto == "0" || rol == "0") {
-				//alert("Campos Vacios");
+				alert("Campos Vacios");
 			}else{
 				$.ajax({
 					type: 'POST',
-					url: '<?php echo URL;?>user/sigIn',
+					url: '<?php echo URL;?>User/create/createDatos',
 					data: {name: name, name_2: name_2, lastName: lastName, lastName_2: lastName_2, documento: documento, genero: genero, estado: estado, direccion: direccion, telefono: telefono, celular: celular, email: email,  pass: pass, instituto: instituto, rol: rol},
 					success: function(response){
 						//alert(response);
 						if (response == 1) {
-							alert("Usuario registrado con exito");
+							alert("Persona registrada con exito");
 							document.location = '<?php echo URL;?>';
 						} else {
+							alert(response);
 							alert("El email ya esta registrado");
 						}
 					}

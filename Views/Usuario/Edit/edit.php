@@ -141,7 +141,7 @@
 <?php } ?>
 
 <script>
-	$(document).ready(editar);
+	$(document).ready(editar_Persona);
 
 	$(function(){
 		$('#editar').click(function(){			

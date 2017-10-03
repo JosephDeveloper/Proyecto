@@ -56,9 +56,61 @@ if (file_exists($controllersPath)) {
                 $controller->{$method}();
             }
         } else {
-            echo "Error no existe el metodo";
+            echo "" ?>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style type="text/css">
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        .fondo{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            z-index: -1
+                        }
+                    </style>
+                </head>
+                <body>
+
+                <img class="img-responsive" id="fondo" src="<?php echo URL.VIEWS.DFT; ?>Images/404.jpg">
+
+                </body>
+                </html>
+            <?php
         }
     }
 } else {
-    echo "Error en la direccion no existe controlador";
+    echo "" ?>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style type="text/css">
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .fondo{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: -1
+                }
+            </style>
+        </head>
+        <body>
+
+        <img class="img-responsive" id="fondo" src="<?php echo URL.VIEWS.DFT; ?>Images/404.jpg">
+
+        </body>
+        </html>
+    <?php
 }
+
+?>

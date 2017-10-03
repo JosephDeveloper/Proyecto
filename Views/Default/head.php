@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
@@ -15,6 +15,11 @@
     <script type="text/javascript" src="<?php echo URL . VIEWS . DFT; ?>Js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="<?php echo URL . VIEWS . DFT; ?>Js/jquery.validate.js"></script>
     <script type="text/javascript" src="<?php echo URL . VIEWS . DFT; ?>Js/funcionesJQuery.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
 
@@ -25,7 +30,7 @@
 
             if ($userName != "") {    
         ?>
-                <nav class="navbar navbar-inverse">
+                <nav class="navbar navbar-inverse navbar-static-top">
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
@@ -50,7 +55,7 @@
                                 </ul>
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Personas<span class="caret"></span></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" ></span> Personas<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                           <li><a href="<?php echo URL; ?>User/Principal/principal">Consultar</a></li>
                                         </ul>

@@ -7,7 +7,6 @@
 			<label for="inputPassword" class="sr-only">Contraseña</label>
 			<input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
 			<button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit">Iniciar Sesión</button>
-			<a href="Index/sigIn">Registrarse</a>
 		</form><br/>
 	</div>
 </div>

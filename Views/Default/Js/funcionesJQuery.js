@@ -23,8 +23,8 @@ function login(){
 	$("#email").focus();
 }
 
-function sigIn(){
-	$("#signin").validate({
+function crearPersona(){
+	$("#Registrar").validate({
 		rules: {
 			"name": {
 				required: true,
@@ -90,8 +90,8 @@ function sigIn(){
 	$("#name").focus();
 }
 
-function editar(){
-	$("#editar").validate({
+function editar_Persona(){
+	$("#Actualizar").validate({
 		rules: {
 			"name": {
 				required: true,
