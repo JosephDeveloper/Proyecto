@@ -23,7 +23,7 @@ class Create extends Controllers
 
     function createDatos(){
         if (isset($_POST["name"]) && isset($_POST["name_2"]) && isset($_POST["lastName"]) && isset($_POST["lastName_2"]) && isset($_POST["documento"]) && isset($_POST["genero"]) && isset($_POST["estado"]) && isset($_POST["direccion"]) && isset($_POST["telefono"]) && isset($_POST["celular"]) && isset($_POST["email"]) && isset($_POST["pass"]) && isset($_POST["instituto"]) && isset($_POST["rol"])){
-            $response = $this->model->getDataModel('*', "email_persona = '" .$_POST["email"]. "'");
+            $response = $this->model->getDataModel('*', "persona", "email_persona = '" .$_POST["email"]. "'");
             $response = $response[0];
             if ($response == NULL){
                 $array["nom_persona"] = $_POST["name"];
@@ -40,7 +40,7 @@ class Create extends Controllers
                 $array["pass_persona"] = $_POST["pass"];
                 $array["id_instituto"] = $_POST["instituto"];
                 $array["id_rol"] = $_POST["rol"];
-                $this->model->createModel($array);
+                $this->model->createModel('persona', $array);
                 echo 1;
             }
         }

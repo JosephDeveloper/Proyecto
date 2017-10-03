@@ -11,7 +11,7 @@ class user_model extends Conexion
     	parent::__construct();
     }
 
-    function userLogin($fields, $where){
-    	return $this->db->select1($fields, "persona", $where);
+    function userLogin($fields, $table, $where){
+    	return $this->db->select1($fields, $table, $where);
     }
 }

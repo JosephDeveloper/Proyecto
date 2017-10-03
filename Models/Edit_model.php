@@ -11,12 +11,12 @@ class Edit_model extends Conexion
 		parent::__construct();
 	}
 
-	function getDataModel($columns, $where){
-		return $this->db->select1($columns, "persona", $where);
+	function getDataModel($columns, $table, $where){
+		return $this->db->select1($columns, $table, $where);
 	}
 
-	function editModel($array, $where){
-		return $this->db->update('persona', $array, $where);
+	function editModel($table, $array, $where){
+		return $this->db->update($table, $array, $where);
 	}
 }
 

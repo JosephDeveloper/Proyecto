@@ -15,7 +15,7 @@ class Edit extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "") {
-            $response = $this->model->getDataModel("*", "id_persona = '" . $idUser . "'");
+            $response = $this->model->getDataModel("*", "persona", "id_persona = '" . $idUser . "'");
             $this->view->render('Usuario', $this, "edit", $response);
         } else {
             header("Location: " . URL);
@@ -40,7 +40,7 @@ class Edit extends Controllers
             $array["pass_persona"]  = $_POST["pass"];
             $array["id_instituto"]  = $_POST["instituto"];
             $array["id_rol"]        = $_POST["rol"];
-            $this->model->editModel($array, "id_persona = '" .$id_persona. "'");
+            $this->model->editModel("persona", $array, "id_persona = '" .$id_persona. "'");
             echo 1;
         }
     }

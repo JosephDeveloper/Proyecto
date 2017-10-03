@@ -11,8 +11,8 @@ class Details_model extends Conexion
 		parent::__construct();
 	}
 
-	function getDataModel($columns, $where){
-		return $this->db->select1($columns, "persona", $where);
+	function getDataModel($columns, $table, $where){
+		return $this->db->select1($columns, $table, $where);
 	}
 }
 

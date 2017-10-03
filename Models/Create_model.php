@@ -11,12 +11,12 @@ class Create_model extends Conexion
 		parent::__construct();
 	}
 
-	function getDataModel($columns, $where){
-		return $this->db->select1($columns, "persona", $where);
+	function getDataModel($columns, $table, $where){
+		return $this->db->select1($columns, $table, $where);
 	}
 
-	function createModel($array){
-		return $this->db->insert('persona', $array);
+	function createModel($table, $array){
+		return $this->db->insert($table, $array);
 	}
 }
 

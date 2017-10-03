@@ -15,7 +15,7 @@ class Details extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "") {
-            $response = $this->model->getDataModel("*", "id_persona = '" . $idUser . "'");
+            $response = $this->model->getDataModel("*", "persona", "id_persona = '" . $idUser . "'");
             $this->view->render('Usuario', $this, "details", $response);
         } else {
             header("Location: " . URL);
