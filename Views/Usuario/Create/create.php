@@ -102,8 +102,11 @@
 									</div>
 									<div class="form-group">
 										<div class="col-sm-12">
+
 							            	<select class="form-control" name="rol" id="rol" placeholder="Instituto">
-							                	<option value="1">ADMINISTRADOR</option>                
+							            		<?php foreach ($array as $key => $value){ ?>
+							                		<option value="<?php echo $value["id_rol"]; ?>"><?php echo $value["des_rol"]; ?></option>    
+							                	<?php } ?>            
 							            	</select>
 	                                    </div>
 									</div>  
