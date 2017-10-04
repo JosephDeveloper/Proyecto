@@ -154,7 +154,7 @@
 							alert("Persona registrada con exito");
 							document.location = '<?php echo URL;?>';
 						} else {
-							alert(response);
+							//alert(response);
 							alert("El email ya esta registrado");
 						}
 					}

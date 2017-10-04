@@ -156,3 +156,39 @@ function editar_Persona(){
 	})
 	$("#name").focus();
 }
+
+function crearRol(){
+	$("#Registrar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			}
+		}
+	})
+	$("#descripcion").focus();
+}
+
+function editar_Rol(){
+	$("#Actualizar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			}
+		}
+	})
+	$("#descripcion").focus();
+}

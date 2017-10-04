@@ -55,6 +55,14 @@
                                 </ul>
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks" ></span> Roles<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                          <li><a href="<?php echo URL; ?>Rol/Principal/principal">Consultar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" ></span> Personas<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                           <li><a href="<?php echo URL; ?>User/Principal/principal">Consultar</a></li>
