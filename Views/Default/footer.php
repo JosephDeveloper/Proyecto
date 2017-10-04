@@ -25,5 +25,8 @@
 	Copyright &copy
 </div>
 
+<script type="text/javascript" src="<?php echo URL . VIEWS . DFT; ?>Js/particles.js"></script>
+<script type="text/javascript" src="<?php echo URL . VIEWS . DFT; ?>Js/particulas.js"></script>
+
 </body>
 </html>

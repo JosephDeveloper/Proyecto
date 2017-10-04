@@ -21,8 +21,24 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
-<body>
 
+<!---Particulas
+<style>
+    body{
+        background: #000;
+    }
+
+    #particles-js {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: rgba(0,0,0,.8);
+    }
+</style>
+<div id="particles-js"></div>
+-->
+
+<body>
         <?php 
             error_reporting(E_ALL ^ E_NOTICE);
             Session::start();
