@@ -22,7 +22,7 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 
-<!---Particulas
+
 <style>
     body{
         background: #000;
@@ -33,12 +33,13 @@
         height: 100%;
         position: fixed;
         background: rgba(0,0,0,.8);
+        z-index: -1;
     }
 </style>
-<div id="particles-js"></div>
--->
+
 
 <body>
+<div id="particles-js"></div>
         <?php 
             error_reporting(E_ALL ^ E_NOTICE);
             Session::start();
