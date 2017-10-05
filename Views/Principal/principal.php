@@ -1,4 +1,4 @@
-<div class="jumbotron text-center">
+<div class="text-center">
     <h1 class="titulo">
         BIENVENIDO
     </h1>

@@ -25,14 +25,13 @@
 
 <style>
     body{
-        background: #000;
+        background: #F391A0;
     }
 
     #particles-js {
         width: 100%;
         height: 100%;
         position: fixed;
-        background: rgba(0,0,0,.8);
         z-index: -1;
     }
 </style>

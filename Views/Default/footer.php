@@ -10,7 +10,7 @@
 	}
 
 	.footer{
-		background-color: #000;
+		background-color: #337ab7;
 		width: 100%;
 		height: 40px;
 		position: absolute;
