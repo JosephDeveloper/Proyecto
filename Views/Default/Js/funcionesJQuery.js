@@ -192,3 +192,53 @@ function editar_Rol(){
 	})
 	$("#descripcion").focus();
 }
+
+function crearPais(){
+	$("#Registrar").validate({
+		rules: {
+			"iso": {
+				required: true,
+				//name: true	
+			},
+			"descripcion": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			iso: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el iso</font></td></center>",
+			},
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			}
+		}
+	})
+	$("#iso").focus();
+}
+
+function editar_Pais(){
+	$("#Actualizar").validate({
+		rules: {
+			"iso": {
+				required: true,
+				//name: true	
+			},
+			"descripcion": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			iso: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el Iso</font></td></center>",
+			},
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			}
+		}
+	})
+	$("#iso").focus();
+}

@@ -22,21 +22,6 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 
-
-<style>
-    body{
-        background: #F391A0;
-    }
-
-    #particles-js {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        z-index: -1;
-    }
-</style>
-
-
 <body>
 <div id="particles-js"></div>
         <?php 
@@ -71,20 +56,28 @@
                                 </ul>
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list" ></span> Gestionar<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="<?php echo URL; ?>Rol/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-tasks" ></span> Roles</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>User/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-user" ></span> Personas</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>Pais/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-globe" ></span> País</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!--<ul class="nav navbar-nav">
+                                    <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks" ></span> Roles<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                           <li><a href="<?php echo URL; ?>Rol/Principal/principal">Consultar</a></li>
                                         </ul>
                                     </li>
-                                </ul>
-                                <ul class="nav navbar-nav">
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" ></span> Personas<span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="<?php echo URL; ?>User/Principal/principal">Consultar</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                </ul>-->
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown"><p class="navbar-text" style="margin-left: 15px;"><?php echo "Bienvenido " .$userName["nom_persona"]; ?></p></li>
                                     <li class="dropdown"><a href="<?php echo URL; ?>User/User/destroySession"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a></li>
@@ -98,3 +91,5 @@
         <?php 
             }
         ?>
+
+<div class="container">

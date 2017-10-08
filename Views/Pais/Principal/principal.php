@@ -1,18 +1,19 @@
 <div class="panel-group col-sm-12">
     <div class="panel panel-primary" style="background-color: #EAE9E9;">
         <div class="panel-heading">
-            Roles
+            País
         </div>
         <div class="panel-body">
           <div class="form-group"> 
             <div class="table-responsive">
             <div class="pull-right box-tools">
-                <a href="<?php echo URL."Rol/Create/create"; ?>" class="btn btn-primary btn-sm glyphicon glyphicon-plus" role="button"></a>
+                <a href="<?php echo URL."Pais/Create/create"; ?>" class="btn btn-primary btn-sm glyphicon glyphicon-plus" role="button"></a>
             </div>
                 <table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Rol - Descipción</th>
+                            <th>ISO</th>
+                            <th>País - Descripción</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
@@ -21,15 +22,16 @@
                     <tbody>  
                     <?php foreach ($array as $key => $value){ ?>
                             <tr>
-                                <td><?php echo $value["des_rol"]; ?></td>
+                                <td><?php echo $value["iso"]; ?></td>
+                                <td><?php echo $value["des_pais"]; ?></td>
                                 <td>
-                                	<a href="<?php echo URL.'Rol/Edit/edit/'. $value["id_rol"] ?>" class="glyphicon glyphicon-pencil"></a>
+                                	<a href="<?php echo URL.'Pais/Edit/edit/'. $value["id_pais"] ?>" class="glyphicon glyphicon-pencil"></a>
                                 </td>
                                 <td>
-                                	<a href="<?php echo URL.'Rol/Details/details/'. $value["id_rol"] ?>" class="glyphicon glyphicon-eye-open"></a>
+                                	<a href="<?php echo URL.'Pais/Details/details/'. $value["id_pais"] ?>" class="glyphicon glyphicon-eye-open"></a>
                                 </td>
                                 <td>
-                                	<a href="<?php echo URL.'Rol/Delete/delete/'. $value["id_rol"] ?>" class="glyphicon glyphicon-remove"></a>
+                                	<a href="<?php echo URL.'Pais/Delete/delete/'. $value["id_pais"] ?>" class="glyphicon glyphicon-remove"></a>
                                 </td>
                             </tr>
                     <?php } ?>

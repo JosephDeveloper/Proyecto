@@ -1,20 +1,23 @@
+</div>
+
 <style>
 	html
 	{
 	    position: relative; 
 	    min-height: 100%;
 	}
+
 	body
 	{
 	    margin: 0 0 65px;
 	}
 
 	.footer{
-		background-color: #337ab7;
+		position: absolute;
+		bottom: 0;
 		width: 100%;
 		height: 40px;
-		position: absolute;
-		bottom: 0;		
+		background-color: #000;
 		padding-top: 10px;
 		text-align: center;
 		color: #FFF;

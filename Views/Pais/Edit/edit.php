@@ -19,18 +19,23 @@
 				<div class="panel-group col-sm-12">
 					<div class="panel-primary">
 						<div class="panel-heading">
-							Datos del Rol
+							Datos del País
 						</div>
 						<form class="form-horizontal" id="Actualizar" name="Actualizar" method="POST">
 							<div class="panel-body panel-body-datos col-sm-12">
 					            <div class="form-group">
 									<div class="col-sm-12">
-										<input type="text" name="id_rol" id="id_rol" placeholder="ID *" class="form-control" value="<?php echo $value["id_rol"]; ?>" disabled></input>
+										<input type="text" name="id_pais" id="id_pais" placeholder="ID *" class="form-control" value="<?php echo $value["id_pais"]; ?>" disabled></input>
                                     </div>
 								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="text" name="iso" id="iso" placeholder="Iso *" class="form-control" value="<?php echo $value["iso"]; ?>"></input>
+                                    </div>
+								</div> 
 					            <div class="form-group">
 									<div class="col-sm-12">
-										<input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_rol"]; ?>"></input>
+										<input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_pais"]; ?>"></input>
                                     </div>
 								</div> 
 								<div class="panel-body">
@@ -49,24 +54,25 @@
 <?php } ?>
 
 <script>
-	$(document).ready(editar_Rol);
+	$(document).ready(editar_Pais);
 
 	$(function(){
 		$('#editar').click(function(){			
+			var iso = $('form[name=Actualizar] input[name=iso]')[0].value;
 			var descripcion = $('form[name=Actualizar] input[name=descripcion]')[0].value;
-			var id_rol = document.Actualizar.id_rol.value;
+			var id_pais = document.Actualizar.id_pais.value;
 
-			if (descripcion == "") {
+			if (iso == "" || descripcion == "") {
 				//alert("Campos Vacios");
 			}else{
 				$.ajax({
 					type: 'POST',
-					url: '<?php echo URL;?>Rol/edit/editDatos',
-					data: {descripcion: descripcion, id_rol: id_rol},
+					url: '<?php echo URL;?>Pais/edit/editDatos',
+					data: {iso: iso, descripcion: descripcion, id_pais: id_pais},
 					success: function(response){
 						//alert(response);
 						if (response == 1) {
-							alert("Rol actualizado con exito");
+							alert("Pais actualizado con exito");
 							document.location = '<?php echo URL;?>';
 						} else {
 							alert("Error");

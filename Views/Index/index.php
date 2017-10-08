@@ -6,7 +6,7 @@
 			<input type="email" id="email" class="form-control" name="email" placeholder="Email" required autofocus>
 			<label for="inputPassword" class="sr-only">Contraseña</label>
 			<input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
-			<button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit">Iniciar Sesión</button>
+			<button class="btn btn-lg btn-block" id="btnLogin" type="submit">Ingresar</button>
 		</form><br/>
 	</div>
 </div>
