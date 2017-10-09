@@ -75,7 +75,7 @@
 							alert("Pais actualizado con exito");
 							document.location = '<?php echo URL;?>';
 						} else {
-							alert("El país ya existe");
+							alert("Error");
 						}
 					}
 				});

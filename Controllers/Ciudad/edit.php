@@ -25,15 +25,10 @@ class Edit extends Controllers
     public function editDatos()
     {
         if (isset($_POST["iso"]) && isset($_POST["descripcion"])) {
-            $pais = ucwords($_POST["descripcion"]);
-            $response = $this->model->getDataModel('*', "pais", "des_pais = '" .$pais. "'");
-            $response = $response[0];
-            if ($response == NULL){
-                $id_pais = $_POST["id_pais"];
-                $array["des_pais"]   = $_POST["descripcion"];
-                $this->model->editModel("pais", $array, "id_pais = '" .$id_pais. "'");
-                echo 1;
-            }
+            $id_pais = $_POST["id_pais"];
+            $array["des_pais"]   = $_POST["descripcion"];
+            $this->model->editModel("pais", $array, "id_pais = '" .$id_pais. "'");
+            echo 1;
         }
     }
 }

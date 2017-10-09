@@ -81,4 +81,54 @@ class QueryManager
 
         return true;
     }
+
+
+
+    function selectUser_Rol($attr, $table, $table1, $where){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_rol = B.id_rol 
+                WHERE " . $where . ";";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
+
+
+    function selectCiudad_Pais($attr, $table, $table1){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_pais = B.id_pais;";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
+
+    function selectCiudad_Pais_1($attr, $table, $table1, $where){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_pais = B.id_pais 
+                WHERE " .$where. ";";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
 }

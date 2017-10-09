@@ -15,8 +15,9 @@ class Edit extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "") {
-            $response = $this->model->getDataModel("*", "persona", "id_persona = '" . $idUser . "'");
-            $this->view->render('Usuario', $this, "edit", $response);
+            $response = $this->model->getDataUser_Rol("*", "persona", "rol", "id_persona = '" . $idUser . "'");
+            $response1 = $this->model->getDataRol("*", "rol");
+            $this->view->render_Persona('Usuario', $this, "edit", $response, $response1);
         } else {
             header("Location: " . URL);
         }

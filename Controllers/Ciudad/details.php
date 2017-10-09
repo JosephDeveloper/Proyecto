@@ -11,12 +11,12 @@ class Details extends Controllers
         parent::__construct();
     }
 
-    public function details($idUser)
+    public function details($idCiudad)
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "") {
-            $response = $this->model->getDataUser_Rol("*", "persona", "rol", "id_persona = '" . $idUser . "'");
-            $this->view->render('Usuario', $this, "details", $response);
+            $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
+            $this->view->render('Ciudad', $this, "details", $response);
         } else {
             header("Location: " . URL);
         }

@@ -115,7 +115,9 @@
 									<div class="form-group">
 										<div class="col-sm-12">
 							            	<select class="form-control" name="rol" id="rol" placeholder="Instituto">
-							                	<option value="1" <?php if($value["id_rol"] == "1") echo 'selected="selected"'; ?> >ADMINISTRADOR</option>                
+							            		<?php foreach ($array1 as $key => $value_1): ?>
+						                			<option value="<?php echo $value_1["id_rol"]; ?>" <?php if($value["id_rol"] == $value_1["id_rol"]) echo 'selected="selected"'; ?>><?php echo $value_1["des_rol"]; ?></option>
+							            		<?php endforeach ?>
 							            	</select>
 	                                    </div>
 									</div>

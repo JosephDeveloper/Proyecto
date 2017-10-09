@@ -20,6 +20,8 @@
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="https://use.fontawesome.com/fc7bdff372.js"></script>
 </head>
 
 <body>
@@ -66,6 +68,9 @@
                                             </li>
                                             <li class="dropdown">
                                                 <a href="<?php echo URL; ?>Pais/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-globe" ></span> País</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>Ciudad/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-map-marker" ></span> Ciudad</a>
                                             </li>
                                         </ul>
                                     </li>

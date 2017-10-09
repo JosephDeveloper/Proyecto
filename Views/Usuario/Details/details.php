@@ -111,16 +111,14 @@
 										<div class="col-sm-12">
 											Instituto: 
 											<select class="form-control" name="instituto" id="instituto" placeholder="Instituto">
-							                	<option value="1" <?php if($value["id_instituto"] == "1") echo 'selected="selected"'; ?>  disabled>FCECEP</option>                
+							                	<option value="1" <?php if($value["id_instituto"] == "1") echo 'selected="selected"'; ?>  disabled>FCECEP</option>
 							            	</select>
 	                                    </div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-12">
-											Rol: 
-							            	<select class="form-control" name="rol" id="rol" placeholder="Rol">
-							                	<option value="1" <?php if($value["id_rol"] == "1") echo 'selected="selected"'; ?>  disabled>ADMINISTRADOR</option>                
-							            	</select>
+											Rol:
+											<input type="texr" name="rol" id="rol" placeholder="Rol *" class="form-control" value="<?php echo $value["des_rol"]; ?>" disabled></input>	
 	                                    </div>
 									</div>									
 								</div>

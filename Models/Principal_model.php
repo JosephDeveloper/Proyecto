@@ -14,6 +14,11 @@ class Principal_model extends Conexion
 	function getDataModel($columns, $table){
 		return $this->db->select2($columns, $table);		
 	}
+
+	function getDataCiudad_Pais($columns, $table, $table1){
+		return $this->db->selectCiudad_Pais($columns, $table, $table1);		
+	}
+		
 }
 
 
