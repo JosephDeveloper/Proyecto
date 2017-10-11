@@ -17,24 +17,20 @@
 				<div class="panel-group col-sm-12">
 					<div class="panel-primary">
 						<div class="panel-heading">
-							Datos de la Ciudad
+							Datos del País
 						</div>
 						<form class="form-horizontal" id="Registrar" name="Registrar" method="POST">
 							<div class="panel-body panel-body-datos col-sm-12">
 							    <div class="form-group">
 									<div class="col-sm-12">
+										<input type="text" name="iso" id="iso" placeholder="Iso *" class="form-control"></input>
+                                    </div>
+								</div>
+							    <div class="form-group">
+									<div class="col-sm-12">
 										<input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control"></input>
                                     </div>
 								</div>
-								<div class="form-group">
-									<div class="col-sm-12">
-										<select class="form-control" name="pais" id="pais" placeholder="Instituto">
-						            		<?php foreach ($array as $key => $value){ ?>
-						                		<option value="<?php echo $value["id_pais"]; ?>"><?php echo $value["des_pais"]; ?></option>    
-						                	<?php } ?>            
-						            	</select>
-                                    </div>
-								</div>  
 								<div class="panel-body">
 									<div class="col-sm-4 col-xs"></div>
 									<button class="btn btn-primary col-sm-4 col-xs-12" type="submit" id="crear">Crear</button>
@@ -49,27 +45,27 @@
 </div>
 
 <script>
-	$(document).ready(crearCiudad);
+	$(document).ready(crearPais);
 
 	$(function(){
 		$('#crear').click(function(){
+			var iso = $('form[name=Registrar] input[name=iso]')[0].value;
 			var descripcion = $('form[name=Registrar] input[name=descripcion]')[0].value;
-			var pais = document.Registrar.pais.value;
 
-			if (pais == "" || descripcion == "") {
+			if (iso == "" || descripcion == "") {
 				alert("Campos Vacios");
 			}else{
 				$.ajax({
 					type: 'POST',
-					url: '<?php echo URL;?>Ciudad/create/createDatos',
-					data: {pais: pais, descripcion: descripcion},
+					url: '<?php echo URL;?>Pais/create/createDatos',
+					data: {iso: iso, descripcion: descripcion},
 					success: function(response){
 						//alert(response);
 						if (response == 1) {
-							alert("Ciudad registrada con exito");
+							alert("Pais registrado con exito");
 							document.location = '<?php echo URL;?>';
 						} else {
-							alert("Ya existe la ciudad");
+							alert("Ya existe el país");
 						}
 					}
 				});

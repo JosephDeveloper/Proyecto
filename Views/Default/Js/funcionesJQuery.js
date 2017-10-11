@@ -242,3 +242,146 @@ function editar_Pais(){
 	})
 	$("#iso").focus();
 }
+
+function crearCiudad(){
+	$("#Registrar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			},
+			"pais": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			iso: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			},
+			pais: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el país</font></td></center>",
+			}
+		}
+	})
+	$("#descripcion").focus();
+}
+
+function editar_Ciudad(){
+	$("#Actualizar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			},
+			"pais": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			},
+			pais: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el país</font></td></center>",
+			}
+		}
+	})
+	$("#descripcion").focus();
+}
+
+function crearInstituto(){
+	$("#Registrar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			},
+			"ciudad": {
+				required: true,
+				//name: true	
+			},
+			"direccion": {
+				required: true,
+				//name: true	
+			},
+			"barrio": {
+				required: true,
+				//name: true	
+			},
+			"telefono": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			},
+			ciudad: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la ciudad</font></td></center>",
+			},
+			direccion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la direccion</font></td></center>",
+			},
+			barrio: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el barrio</font></td></center>",
+			},
+			telefono: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el teléfono</font></td></center>",
+			}
+		}
+	})
+	$("#descripcion").focus();
+}
+
+
+function editar_Instituto(){
+	$("#Actualizar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			},
+			"ciudad": {
+				required: true,
+				//name: true	
+			},
+			"direccion": {
+				required: true,
+				//name: true	
+			},
+			"barrio": {
+				required: true,
+				//name: true	
+			},
+			"telefono": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			},
+			ciudad: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la ciudad</font></td></center>",
+			},
+			direccion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la direccion</font></td></center>",
+			},
+			barrio: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el barrio</font></td></center>",
+			},
+			telefono: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba el teléfono</font></td></center>",
+			}
+		}
+	})
+	$("#descripcion").focus();
+}

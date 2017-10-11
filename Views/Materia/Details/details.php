@@ -19,26 +19,26 @@
 				<div class="panel-group col-sm-12">
 					<div class="panel-primary">
 						<div class="panel-heading">
-							Datos de la Ciudad
+							Datos del País
 						</div>
 						<form class="form-horizontal" id="Actualizar" name="Actualizar" method="POST">
 							<div class="panel-body panel-body-datos col-sm-12">
 					            <div class="form-group">
 									<div class="col-sm-12">
-										ID: <input type="text" name="id_ciudad" id="id_ciudad" placeholder="ID *" class="form-control" value="<?php echo $value["id_ciudad"]; ?>" disabled></input>
+										ID: <input type="text" name="id_pais" id="id_pais" placeholder="ID *" class="form-control" value="<?php echo $value["id_pais"]; ?>" disabled></input>
                                     </div>
 								</div>
-					            <div class="form-group">
-									<div class="col-sm-12">
-										Descripción: <input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_ciudad"]; ?>" disabled></input>
-                                    </div>
-								</div> 						
 								<div class="form-group">
 									<div class="col-sm-12">
-										País: <input type="text" name="pais" id="pais" placeholder="Iso *" class="form-control" value="<?php echo $value["des_pais"]; ?>" disabled></input>
+										Iso: <input type="text" name="iso" id="iso" placeholder="Iso *" class="form-control" value="<?php echo $value["iso"]; ?>" disabled></input>
                                     </div>
 								</div> 	
-								<a href="<?php echo URL.'Ciudad/Edit/edit/'. $value["id_ciudad"] ?>" class="glyphicon glyphicon-pencil"></a>
+					            <div class="form-group">
+									<div class="col-sm-12">
+										Descripción: <input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_pais"]; ?>" disabled></input>
+                                    </div>
+								</div> 						
+								<a href="<?php echo URL.'Pais/Edit/edit/'. $value["id_pais"] ?>" class="glyphicon glyphicon-pencil"></a>
 							</div>
 						</form>
 					</div>

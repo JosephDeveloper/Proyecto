@@ -60,17 +60,30 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list" ></span> Gestionar<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="<?php echo URL; ?>Rol/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-tasks" ></span> Roles</a>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="<?php echo URL; ?>User/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-user" ></span> Personas</a>
-                                            </li>
                                             <li class="dropdown">
                                                 <a href="<?php echo URL; ?>Pais/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-globe" ></span> País</a>
                                             </li>
                                             <li class="dropdown">
                                                 <a href="<?php echo URL; ?>Ciudad/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-map-marker" ></span> Ciudad</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>User/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-user" ></span> Persona</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php echo URL; ?>Rol/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-tasks" ></span> Rol</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php echo URL; ?>Institucion/Principal/principal" class="dropdown-toggle"><span class="fa fa-university" ></span> Institución</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog fa-lg" ></span> Configurar<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>Materia/Principal/principal" class="dropdown-toggle"><span class="fa fa-book" ></span> Materia</a>
                                             </li>
                                         </ul>
                                     </li>

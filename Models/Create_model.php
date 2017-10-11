@@ -15,11 +15,7 @@ class Create_model extends Conexion
 		return $this->db->select1($columns, $table, $where);
 	}
 
-	function getDataRol($columns, $table){
-		return $this->db->select2($columns, $table);
-	}
-
-	function getDataPais($columns, $table){
+	function getData($columns, $table){
 		return $this->db->select2($columns, $table);
 	}
 

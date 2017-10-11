@@ -19,27 +19,23 @@
 				<div class="panel-group col-sm-12">
 					<div class="panel-primary">
 						<div class="panel-heading">
-							Datos de la Ciudad
+							Datos del País
 						</div>
 						<form class="form-horizontal" id="Actualizar" name="Actualizar" method="POST">
 							<div class="panel-body panel-body-datos col-sm-12">
 					            <div class="form-group">
 									<div class="col-sm-12">
-										<input type="text" name="id_ciudad" id="id_ciudad" placeholder="ID *" class="form-control" value="<?php echo $value["id_ciudad"]; ?>" disabled></input>
+										<input type="text" name="id_pais" id="id_pais" placeholder="ID *" class="form-control" value="<?php echo $value["id_pais"]; ?>" disabled></input>
                                     </div>
 								</div>
-					            <div class="form-group">
-									<div class="col-sm-12">
-										<input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_ciudad"]; ?>"></input>
-                                    </div>
-								</div> 
 								<div class="form-group">
 									<div class="col-sm-12">
-										<select class="form-control" name="pais" id="pais" placeholder="ID País *">
-						            		<?php foreach ($array1 as $key => $value_1): ?>
-					                			<option value="<?php echo $value_1["id_pais"]; ?>" <?php if($value["id_pais"] == $value_1["id_pais"]) echo 'selected="selected"'; ?>><?php echo $value_1["des_pais"]; ?></option>
-						            		<?php endforeach ?>
-						            	</select>
+										<input type="text" name="iso" id="iso" placeholder="Iso *" class="form-control" value="<?php echo $value["iso"]; ?>"></input>
+                                    </div>
+								</div> 
+					            <div class="form-group">
+									<div class="col-sm-12">
+										<input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_pais"]; ?>"></input>
                                     </div>
 								</div> 
 								<div class="panel-body">
@@ -58,29 +54,28 @@
 <?php } ?>
 
 <script>
-	$(document).ready(editar_Ciudad);
+	$(document).ready(editar_Pais);
 
 	$(function(){
 		$('#editar').click(function(){			
-			var id_ciudad = document.Actualizar.id_ciudad.value;
+			var iso = $('form[name=Actualizar] input[name=iso]')[0].value;
 			var descripcion = $('form[name=Actualizar] input[name=descripcion]')[0].value;
-			var pais = document.Actualizar.pais.value;
+			var id_pais = document.Actualizar.id_pais.value;
 
-			if (id_ciudad == "" || descripcion == "" || pais == "") {
+			if (iso == "" || descripcion == "") {
 				//alert("Campos Vacios");
 			}else{
 				$.ajax({
 					type: 'POST',
-					url: '<?php echo URL;?>Ciudad/edit/editDatos',
-					data: {id_ciudad: id_ciudad, descripcion: descripcion, pais: pais},
+					url: '<?php echo URL;?>Pais/edit/editDatos',
+					data: {iso: iso, descripcion: descripcion, id_pais: id_pais},
 					success: function(response){
 						//alert(response);
 						if (response == 1) {
-							alert("Ciudad actualizada con exito");
+							alert("Pais actualizado con exito");
 							document.location = '<?php echo URL;?>';
 						} else {
-							//alert(response);
-							alert("Error");
+							alert("El país ya existe");
 						}
 					}
 				});

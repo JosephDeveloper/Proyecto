@@ -19,23 +19,23 @@
 				<div class="panel-group col-sm-12">
 					<div class="panel-primary">
 						<div class="panel-heading">
-							Datos de la Ciudad
+							Datos del País
 						</div>
 						<form class="form-horizontal" id="Delete" name="Delete" method="POST">
 							<div class="panel-body panel-body-datos col-sm-12">
 					            <div class="form-group">
 									<div class="col-sm-12">
-										ID: <input type="text" name="id_ciudad" id="id_ciudad" placeholder="ID *" class="form-control" value="<?php echo $value["id_ciudad"]; ?>" disabled></input>
-                                    </div>
-								</div>
-					            <div class="form-group">
-									<div class="col-sm-12">
-										Descripción: <input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_ciudad"]; ?>" disabled></input>
+										ID: <input type="text" name="id_pais" id="id_pais" placeholder="ID *" class="form-control" value="<?php echo $value["id_pais"]; ?>" disabled></input>
                                     </div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-12">
-										País: <input type="text" name="pais" id="pais" placeholder="Iso *" class="form-control" value="<?php echo $value["des_pais"]; ?>" disabled></input>
+										Iso: <input type="text" name="iso" id="iso" placeholder="Iso *" class="form-control" value="<?php echo $value["iso"]; ?>" disabled></input>
+                                    </div>
+								</div>
+					            <div class="form-group">
+									<div class="col-sm-12">
+										Descripción: <input type="text" name="descripcion" id="descripcion" placeholder="Descripción *" class="form-control" value="<?php echo $value["des_pais"]; ?>" disabled></input>
                                     </div>
 								</div>
 								<div class="panel-body">
@@ -56,19 +56,19 @@
 <script>
 	$(function(){
 		$('#delete').click(function(){			
-			var id_ciudad = $('form[name=Delete] input[name=id_ciudad]')[0].value;
-			//var id_ciudad = document.Delete.id_ciudad.value;
+			var id_pais = $('form[name=Delete] input[name=id_pais]')[0].value;
+			//var id_pais = document.Delete.id_pais.value;
 
-			if (id_ciudad == "") {
+			if (id_pais == "") {
 				//alert("Campos Vacios");
 			}else{
 				$.ajax({
 					type: 'POST',
-					url: '<?php echo URL;?>Ciudad/Delete/deleteDatos',
-					data: {id_ciudad: id_ciudad},
+					url: '<?php echo URL;?>Pais/Delete/deleteDatos',
+					data: {id_pais: id_pais},
 					success: function(response){						
 						if (response == 1) {
-							alert("Ciudad eliminada con exito");
+							alert("Pais eliminado con exito");
 							document.location = '<?php echo URL."Home/Principal/principal";?>';
 						} else {
 							alert(response);

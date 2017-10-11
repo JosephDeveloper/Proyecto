@@ -11,15 +11,15 @@ class Delete extends Controllers
         parent::__construct();
     }
 
-    public function delete($idCiudad = 0)
+    public function delete($idInstituto = 0)
     {
-        if (trim($idCiudad) != 0):
+        if (trim($idInstituto) != 0):
             $userName = Session::getSession("Usuario");
             if ($userName != "") {
-                $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
+                $response = $this->model->getDataIns_Ciu_1("*", "instituto", "ciudad", "id_instituto = '" . $idInstituto . "'");
                 if ($response != null) {
-                    $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
-                    $this->view->render('Ciudad', $this, "delete", $response);
+                    $response = $this->model->getDataIns_Ciu_1("*", "instituto", "ciudad", "id_instituto = '" . $idInstituto . "'");
+                    $this->view->render('Institucion', $this, "delete", $response);
                 } else {
                     header("Location: " . URL);    
                 }
@@ -35,9 +35,9 @@ class Delete extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != ""){
-            if (isset($_POST["id_ciudad"])){
-                $where = "id_ciudad = " . $_POST["id_ciudad"];
-                $this->model->deleteModel("ciudad", $where);
+            if (isset($_POST["id_instituto"])){
+                $where = "id_instituto = " . $_POST["id_instituto"];
+                $this->model->deleteModel("instituto", $where);
                 echo 1;
             }
         }else{

@@ -20,7 +20,7 @@
 			require VIEWS.DFT."footer.php";
 		}
 
-		function render_Persona($site, $controller, $view, $array, $array1)
+		function render2($site, $controller, $view, $array, $array1)
 		{
 			//get_class devuelve el nombre de la clase de un objeto
 			$controllers = get_class($controller);

@@ -11,12 +11,13 @@ class Edit extends Controllers
         parent::__construct();
     }
 
-    public function edit($idPais)
+    public function edit($idCiudad)
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "") {
-            $response = $this->model->getDataModel("*", "pais", "id_pais = '" . $idPais . "'");
-            $this->view->render('Pais', $this, "edit", $response);
+            $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
+            $response1 = $this->model->getData("*", "pais");
+            $this->view->render2('Ciudad', $this, "edit", $response, $response1);
         } else {
             header("Location: " . URL);
         }
@@ -24,10 +25,11 @@ class Edit extends Controllers
 
     public function editDatos()
     {
-        if (isset($_POST["iso"]) && isset($_POST["descripcion"])) {
-            $id_pais = $_POST["id_pais"];
-            $array["des_pais"]   = $_POST["descripcion"];
-            $this->model->editModel("pais", $array, "id_pais = '" .$id_pais. "'");
+        if (isset($_POST["id_ciudad"]) && isset($_POST["descripcion"]) && isset($_POST["pais"])) {
+            $id_ciudad = $_POST["id_ciudad"];
+            $array["des_ciudad"]   = $_POST["descripcion"];
+            $array["id_pais"]   = $_POST["pais"];
+            $this->model->editModel("ciudad", $array, "id_ciudad = '" .$id_ciudad. "'");
             echo 1;
         }
     }

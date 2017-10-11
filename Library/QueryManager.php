@@ -131,4 +131,52 @@ class QueryManager
             return $response;
         }
     }
+
+    function selectIns_Ciu($attr, $table, $table1){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_ciudad = B.id_ciudad;";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
+
+    function selectIns_Ciu_1($attr, $table, $table1, $where){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_ciudad = B.id_ciudad 
+                WHERE " .$where. ";";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
+
+    function selectPer_Mat($attr, $table, $table1, $table2){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_persona = B.id_persona 
+                INNER JOIN " . $table2 . " AS C 
+                ON C.id_materia = B.id_materia;";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
 }

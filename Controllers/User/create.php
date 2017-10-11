@@ -15,7 +15,7 @@ class Create extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "") {
-            $response = $this->model->getDataRol("*","rol");
+            $response = $this->model->getData("*","rol");
             $this->view->render('Usuario', $this, "create", $response);
         } else {
             header("Location: " . URL);

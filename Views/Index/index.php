@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="card card card-container">
-		<h2 class="form-signin-heading text-center" style="color: #4F4F4F;">Iniciar sesión</h2>
+		<h2 class="form-signin-heading text-center" style="color: #2F2F2F;"><strong>I</strong>niciar <strong>S</strong>esión</h2>
 		<form class="form-signin" id="Session" name="Session" method="POST">	
 			<label for="inputEmail" class="sr-only">Email</label>
 			<input type="email" id="email" class="form-control" name="email" placeholder="Email" required autofocus>
