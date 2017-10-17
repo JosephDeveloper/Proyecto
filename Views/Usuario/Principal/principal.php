@@ -1,4 +1,7 @@
 <div class="panel-group col-sm-12">
+    <div class="pull-right" style="padding-top: 4px;">
+        <a href="<?php echo URL."User/Create/create"; ?>" class="btn" role="button"><span class="glyphicon glyphicon-plus"></span> Nuevo</a>
+    </div>
     <div class="panel-primary" style="background-color: #EAE9E9">
         <div class="panel-heading">
             Usuarios
@@ -6,9 +9,6 @@
         <div class="panel-body">
           <div class="form-group"> 
             <div class="table-responsive">
-            <div class="pull-right box-tools">
-                <a href="<?php echo URL."User/Create/create"; ?>" class="btn btn-primary btn-sm glyphicon glyphicon-plus" role="button"></a>
-            </div>
                 <table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>

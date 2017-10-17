@@ -18,7 +18,7 @@ class Index extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != ""){
-            header("Location: " .URL. "Pais/Principal/principal");
+            header("Location: " .URL. "Materia/Principal/principal");
         }else{
             $this->view->render('Home', $this,'index','');
         }

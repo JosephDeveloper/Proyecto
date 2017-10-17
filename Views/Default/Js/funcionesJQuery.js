@@ -385,3 +385,20 @@ function editar_Instituto(){
 	})
 	$("#descripcion").focus();
 }
+
+function crearMateria(){
+	$("#Registrar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+			}
+		}
+	})
+}
