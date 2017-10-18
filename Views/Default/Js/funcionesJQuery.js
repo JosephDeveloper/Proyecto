@@ -397,7 +397,7 @@ function crearMateria(){
 
 		messages: {
 			descripcion: {
-				required: "<center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center>",
+				required: "<div id='error'><center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center></div>",
 			}
 		}
 	})

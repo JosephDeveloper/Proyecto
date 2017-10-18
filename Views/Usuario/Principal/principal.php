@@ -12,6 +12,7 @@
                 <table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Documento</th>
@@ -29,6 +30,7 @@
                     <tbody>  
                     <?php foreach ($array as $key => $value){ ?>
                             <tr>
+                                <td><?php echo $value["id_persona"]; ?></td>
                                 <td><?php echo $value["nom_persona"] . " " . $value["nom1_persona"]; ?></td>
                                 <td><?php echo $value["ape_persona"] . " " . $value["ape1_persona"]; ?></td>
                                 <td><?php echo $value["doc_persona"]; ?></td>

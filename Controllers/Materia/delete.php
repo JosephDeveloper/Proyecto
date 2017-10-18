@@ -31,9 +31,23 @@ class Delete extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != ""){
-            if (isset($_POST["id_pais"])){
-                $where = "id_pais = " . $_POST["id_pais"];
-                $this->model->deleteModel("pais", $where);
+            if (isset($_POST["id_materia"])){
+                $where = "id_materia = " . $_POST["id_materia"];
+                $this->model->deleteModel("materia", $where);
+                echo 1;
+            }
+        }else{
+            header("Location: " . URL);
+        }        
+    }
+
+    public function deleteAsignado()
+    {
+        $userName = Session::getSession("Usuario");
+        if ($userName != ""){
+            if (isset($_POST["id_perso_mate"])){
+                $where = "id_perso_mate = " . $_POST["id_perso_mate"];
+                $this->model->deleteModel("perso_x_materia", $where);
                 echo 1;
             }
         }else{
