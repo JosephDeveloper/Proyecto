@@ -402,3 +402,18 @@ function crearMateria(){
 		}
 	})
 }
+
+function Asignar(){
+	$("#asignar").click(function(e){
+     	e.preventDefault();
+        url = $(this).attr("href");
+
+        $.post( url, function(data) {
+        		if(url!="#")
+        			$("#contenedor").removeClass("hide");
+        			$("#contenedor").addClass("show");
+        			$("#titulo").html("Asignar nueva Materia");
+                	$("#contenido" ).html(data);
+        });
+    });
+}
