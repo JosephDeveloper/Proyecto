@@ -1,5 +1,13 @@
 <div class="text-center">
     <h1 class="titulo">
-        BIENVENIDO
+    	<?php 
+    		if ($array == 1) {
+        		echo "BIENVENIDO ADMINISTRADOR";	
+    		} else if ($array == 2) {
+    			echo "BIENVENIDO ESTUDIANTE";	
+    		} else if ($array == 3) {
+    			echo "BIENVENIDO DOCENTE";
+    		}
+    	?>
     </h1>
 </div>
