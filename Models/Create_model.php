@@ -1,7 +1,7 @@
 <?php 
 
 /**
-* 
+* *
 */
 class Create_model extends Conexion
 {
