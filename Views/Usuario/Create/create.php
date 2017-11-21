@@ -96,16 +96,17 @@
 									<div class="form-group">
 										<div class="col-sm-12">
 											<select class="form-control" name="instituto" id="instituto" placeholder="Instituto">
-							                	<option value="1">FCECEP</option>                
+							                	<?php foreach ($array as $key => $value){ ?>
+							                		<option value="<?php echo $value["id_instituto"]; ?>"><?php echo $value["nom_instituto"]; ?></option>    
+							                	<?php } ?>   
 							            	</select>
 	                                    </div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-12">
-
 							            	<select class="form-control" name="rol" id="rol" placeholder="Instituto">
-							            		<?php foreach ($array as $key => $value){ ?>
-							                		<option value="<?php echo $value["id_rol"]; ?>"><?php echo $value["des_rol"]; ?></option>    
+							            		<?php foreach ($array1 as $key => $value1){ ?>
+							                		<option value="<?php echo $value1["id_rol"]; ?>"><?php echo $value1["des_rol"]; ?></option>    
 							                	<?php } ?>            
 							            	</select>
 	                                    </div>
