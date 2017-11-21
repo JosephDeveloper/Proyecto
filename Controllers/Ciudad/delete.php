@@ -15,7 +15,7 @@ class Delete extends Controllers
     {
         if (trim($idCiudad) != 0):
             $userName = Session::getSession("Usuario");
-            if ($userName != "") {
+            if ($userName != "" && $userName["id_rol"] == 1) {
                 $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
                 if ($response != null) {
                     $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
@@ -34,7 +34,7 @@ class Delete extends Controllers
     public function deleteDatos()
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != ""){
+        if ($userName != "" && $userName["id_rol"] == 1){
             if (isset($_POST["id_ciudad"])){
                 $where = "id_ciudad = " . $_POST["id_ciudad"];
                 $this->model->deleteModel("ciudad", $where);

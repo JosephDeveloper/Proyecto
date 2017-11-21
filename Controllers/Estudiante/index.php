@@ -17,8 +17,8 @@ class Index extends Controllers
     public function index()
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "" && $userName["id_rol"] == 1){
-            header("Location: " .URL. "Ciudad/Principal/principal");
+        if ($userName != "" && $userName["id_rol"] == 2){
+            header("Location: " .URL. "Estudiante/Principal/principal");
         }else{
             $this->view->render('Home', $this,'index','');
         }

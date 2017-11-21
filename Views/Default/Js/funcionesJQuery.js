@@ -417,3 +417,18 @@ function Asignar(){
         });
     });
 }
+
+function Asignar_est(){
+	$("#asignar_est").click(function(e){
+     	e.preventDefault();
+        url = $(this).attr("href");
+
+        $.post( url, function(data) {
+        		if(url!="#")
+        			$("#contenedor").removeClass("hide");
+        			$("#contenedor").addClass("show");
+        			$("#titulo").html("Asignar nuevo Estudiante");
+                	$("#contenido" ).html(data);
+        });
+    });
+}

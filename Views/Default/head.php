@@ -60,6 +60,7 @@
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown"><a href="<?php echo URL; ?>Home/Principal/principal">Inicio</a></li>
                                 </ul>
+                                <?php if($userName["id_rol"] == 1) { ?>
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list" ></span> Gestionar<span class="caret"></span></a>
@@ -82,6 +83,8 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                <?php } ?>
+                                <?php if($userName["id_rol"] == 2) { ?>
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog fa-lg" ></span> Configurar<span class="caret"></span></a>
@@ -89,9 +92,16 @@
                                             <li class="dropdown">
                                                 <a href="<?php echo URL; ?>Materia/Principal/principal" class="dropdown-toggle"><span class="fa fa-book" ></span> Materia</a>
                                             </li>
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>Estudiante/Principal/principal" class="dropdown-toggle"><span class="glyphicon glyphicon-book" ></span> Estudiante</a>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
+
+                                <?php 
+                                    } 
+                                ?>
                                 <!--<ul class="nav navbar-nav">
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks" ></span> Roles<span class="caret"></span></a>

@@ -13,7 +13,7 @@ class principal extends Controllers
 
 	function principal(){
 		$userName =  Session::getSession("Usuario");
-		if ($userName != ""){
+		if ($userName != "" && $userName["id_rol"] == 1){
 			$response = $this->model->getDataModel("*","persona");
 			$this->view->render('Usuario', $this, 'principal', $response);
 		}else{

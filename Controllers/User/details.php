@@ -14,7 +14,7 @@ class Details extends Controllers
     public function details($idUser)
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "") {
+        if ($userName != "" && $userName["id_rol"] == 1) {
             $response = $this->model->getDataUser_Rol("*", "persona", "rol", "id_persona = '" . $idUser . "'");
             $this->view->render('Usuario', $this, "details", $response);
         } else {

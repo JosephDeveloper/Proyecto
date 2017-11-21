@@ -14,7 +14,7 @@ class Details extends Controllers
     public function details($idCiudad)
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "") {
+        if ($userName != "" && $userName["id_rol"] == 1) {
             $response = $this->model->getDataCiudad_Pais_1("*", "ciudad", "pais", "id_ciudad = '" . $idCiudad . "'");
             $this->view->render('Ciudad', $this, "details", $response);
         } else {

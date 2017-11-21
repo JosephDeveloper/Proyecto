@@ -14,7 +14,7 @@ class Create extends Controllers
     public function create()
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "") {
+        if ($userName != "" && $userName["id_rol"] == 1) {
             $this->view->render('Pais', $this, "create", '');
         } else {
             header("Location: " . URL);

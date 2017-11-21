@@ -179,4 +179,25 @@ class QueryManager
             return $response;
         }
     }
+
+    function selectEst_Mat($attr, $table, $table1, $table2, $table3, $table4){
+        $query  = "SELECT " . $attr . 
+                " FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_estudi = B.id_estudi
+                INNER JOIN " . $table2 . " AS C 
+                ON B.id_perso_mate = C.id_perso_mate
+                INNER JOIN " . $table3 . " AS D
+                ON C.id_materia = D.id_materia
+                INNER JOIN " . $table4 . " AS E 
+                ON C.id_persona = E.id_persona;";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
 }

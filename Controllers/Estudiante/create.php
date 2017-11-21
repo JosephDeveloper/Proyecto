@@ -15,7 +15,7 @@ class Create extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "" && $userName["id_rol"] == 2) {
-            $this->view->render('Materia', $this, "create", '');
+            $this->view->render('Estudiante', $this, "create", '');
         } else {
             header("Location: " . URL);
         }
@@ -25,9 +25,9 @@ class Create extends Controllers
     {
         $userName = Session::getSession("Usuario");
         if ($userName != "" && $userName["id_rol"] == 2) {
-            $response = $this->model->getData("id_persona, nom_persona, nom1_persona, ape_persona, ape1_persona, doc_persona", "persona");
-            $response1 = $this->model->getData("*", "materia");
-            $this->view->contenido('Materia', $this, "asignar", $response, $response1);
+            $response = $this->model->getData("id_estudi, nom_estudi, ape_estudi, doc_estudi", "estudiante");
+            $response1 = $this->model->getDataPer_Mat("*", "persona", "perso_x_materia", "materia");
+            $this->view->contenido('Estudiante', $this, "asignar", $response, $response1);
         } else {
             header("Location: " . URL);
         }
@@ -47,12 +47,12 @@ class Create extends Controllers
     }
 
     function asignarDatos(){
-        if (isset($_POST["id_persona"]) && isset($_POST["id_materia"])) {
-            $materia = $_POST["id_materia"];
-            $response = $this->model->getDataModel('*', "materia", "id_materia = '" .$materia. "'");
+        if (isset($_POST["id_estudi"]) && isset($_POST["id_perso_mate"])) {
+            $materia = $_POST["id_perso_mate"];
+            $response = $this->model->getDataModel('*', "perso_x_materia", "id_perso_mate = '" .$materia. "'");
             $response = $response[0];
-            $persona = $_POST["id_persona"];
-            $response1 = $this->model->getDataModel('*', "persona", "id_persona = '" .$persona. "'");
+            $estudiante = $_POST["id_estudi"];
+            $response1 = $this->model->getDataModel('*', "estudiante", "id_estudi = '" .$estudiante. "'");
             $response1 = $response1[0];
             if ($response == NULL){
                 echo 0;
@@ -60,9 +60,9 @@ class Create extends Controllers
                 if ($response1 == NULL) {
                     echo 2;
                 }else{
-                    $array["id_materia"] = $materia;
-                    $array["id_persona"] = $persona;
-                    $this->model->createModel('perso_x_materia', $array);
+                    $array["id_estudi"] = $estudiante;
+                    $array["id_perso_mate"] = $materia;
+                    $this->model->createModel('eva_x_act', $array);
                     echo 1;
                 }
             }

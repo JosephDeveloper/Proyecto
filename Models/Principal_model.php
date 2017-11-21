@@ -26,6 +26,10 @@ class Principal_model extends Conexion
 	function getDataPer_Mat($columns, $table, $table1, $table2){
 		return $this->db->selectPer_Mat($columns, $table, $table1, $table2);		
 	}
+
+	function getDataEst_Mat($columns, $table, $table1, $table2, $table3, $table4){
+		return $this->db->selectEst_Mat($columns, $table, $table1, $table2, $table3, $table4);		
+	}
 		
 }
 

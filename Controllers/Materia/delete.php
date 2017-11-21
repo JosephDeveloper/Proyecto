@@ -14,7 +14,7 @@ class Delete extends Controllers
     public function delete($id_pais)
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "") {
+        if ($userName != "" && $userName["id_rol"] == 2) {
             $response = $this->model->getDataModel("*", "pais", "id_pais = '" . $id_pais . "'");
             if ($response != null) {
                 $response = $this->model->getDataModel("*", "pais", "id_pais = '" . $id_pais . "'");
@@ -30,7 +30,7 @@ class Delete extends Controllers
     public function deleteDatos()
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != ""){
+        if ($userName != "" && $userName["id_rol"] == 2){
             if (isset($_POST["id_materia"])){
                 $where = "id_materia = " . $_POST["id_materia"];
                 $this->model->deleteModel("materia", $where);
@@ -44,7 +44,7 @@ class Delete extends Controllers
     public function deleteAsignado()
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != ""){
+        if ($userName != "" && $userName["id_rol"] == 2){
             if (isset($_POST["id_perso_mate"])){
                 $where = "id_perso_mate = " . $_POST["id_perso_mate"];
                 $this->model->deleteModel("perso_x_materia", $where);

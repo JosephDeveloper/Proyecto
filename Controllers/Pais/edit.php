@@ -14,7 +14,7 @@ class Edit extends Controllers
     public function edit($idPais)
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "") {
+        if ($userName != "" && $userName["id_rol"] == 1) {
             $response = $this->model->getDataModel("*", "pais", "id_pais = '" . $idPais . "'");
             $this->view->render('Pais', $this, "edit", $response);
         } else {

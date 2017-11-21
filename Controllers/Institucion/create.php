@@ -14,7 +14,7 @@ class Create extends Controllers
     public function create()
     {
         $userName = Session::getSession("Usuario");
-        if ($userName != "") {
+        if ($userName != "" && $userName["id_rol"] == 1) {
             $response = $this->model->getData("*","ciudad");
             $this->view->render('Institucion', $this, "create", $response);
         } else {
