@@ -432,3 +432,27 @@ function Asignar_est(){
         });
     });
 }
+
+function crearsubActividad(){
+	$("#Registrar").validate({
+		rules: {
+			"descripcion": {
+				required: true,
+				//name: true	
+			},
+			"fecha": {
+				required: true,
+				//name: true	
+			}
+		},
+
+		messages: {
+			descripcion: {
+				required: "<div id='error'><center><td colspan='2'><font color='red'>Porfavor, escriba la descripción</font></td></center></div>",
+			},
+			fecha: {
+				required: "<div id='error'><center><td colspan='2'><font color='red'>Porfavor, digíte la fecha</font></td></center></div>",
+			}
+		}
+	})
+}

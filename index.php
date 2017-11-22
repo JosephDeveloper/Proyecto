@@ -24,7 +24,10 @@ if (isset($url[2])) {
 if (isset($url[3])) {
     if ($url[2] != '') {
         $params = $url[3];
-    }
+/*        if (isset($_GET['materia'])) {
+            $params_1 = "materia=".$_GET['materia'];
+        }
+*/    }
 }
 
 //Evalua si tenemos una clase cargada
@@ -49,8 +52,10 @@ if (file_exists($controllersPath)) {
     if (isset($method)) {
         //Si el metodo existe
         if (method_exists($controller, $method)) {
-            if (isset($params)) {
+            /*if (isset($params) && isset($params_1)) {
                 //Ejecutamos el metodo que resiva el parametro
+                $controller->{$method}($params, $params_1);
+            } else*/ if (isset($params)){
                 $controller->{$method}($params);
             } else {
                 $controller->{$method}();

@@ -105,7 +105,28 @@
                                         </ul>
                                     </li>
                                 </ul>
-
+                                <?php 
+                                    } 
+                                ?>
+                                <?php if($userName["id_rol"] == 3) { ?>
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog fa-lg" ></span> Configurar<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>Evaluacion/Principal/evaluacion" class="dropdown-toggle"><span class="fa fa-book" ></span> Evaluación</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil" ></span> Registrar<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                <a href="<?php echo URL; ?>Notas/Principal/evaluacion" class="dropdown-toggle"><span class="glyphicon glyphicon-list" ></span> Notas</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                                 <?php 
                                     } 
                                 ?>
