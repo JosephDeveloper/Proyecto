@@ -1,4 +1,5 @@
 # Activar RewriteEngine
+DirectoryIndex index.php
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-d
