@@ -19,6 +19,10 @@ class Principal_model extends Conexion
 		return $this->db->select1($columns, $table, $where);		
 	}
 
+	function getDataModelWhere_4($columns, $table, $table1, $table2, $table3, $where){
+		return $this->db->select3($columns, $table, $table1, $table2, $table3, $where);		
+	}
+
 	function getDataCiudad_Pais($columns, $table, $table1){
 		return $this->db->selectCiudad_Pais($columns, $table, $table1);		
 	}
@@ -39,8 +43,8 @@ class Principal_model extends Conexion
 		return $this->db->selectEst_Mat($columns, $table, $table1, $table2, $table3, $table4);		
 	}
 
-	function getDataEst_Mat_1($columns, $table, $table1, $table2, $where, $and){
-		return $this->db->selectEst_Mat_1($columns, $table, $table1, $table2, $where, $and);		
+	function getDataEst_Mat_1($columns, $table, $table1, $table2, $table3, $table4, $table5, $where, $and){
+		return $this->db->selectEst_Mat_1($columns, $table, $table1, $table2, $table3, $table4, $table5, $where, $and);		
 	}
 
 	function getDataEva_Act($columns, $table, $table1, $where){

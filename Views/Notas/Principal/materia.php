@@ -18,7 +18,7 @@
                             <tr>
                                 <td><?php echo $value["des_materia"]; ?></td>
                                 <td>
-                                    <a href="<?php echo URL.'Notas/Principal/estudiantes/'. $value["id_materia"] .'&evaluacion=' .$array1?>">Lista de Estudiantes</a>
+                                    <a href="<?php echo URL.'Notas/Principal/estudiantes/'. $value["id_perso_mate"] .'&evaluacion=' .$array1?>">Lista de Estudiantes</a>
                                 </td>
                             </tr>
                     <?php } ?>

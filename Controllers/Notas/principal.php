@@ -35,9 +35,11 @@ class principal extends Controllers
 		$userName =  Session::getSession("Usuario");		
 		if ($userName != "" && $userName["id_rol"] == 3){
 			$evaluacion = $_GET["evaluacion"];
-			$response = $this->model->getDataEst_Mat_1("*", "eva_x_act", "estudiante", "perso_x_materia",  "C.id_persona = " . $userName["id_persona"], "C.id_materia = " . $id_materia);
+			//echo $id_materia;
+			$response = $this->model->getDataEst_Mat_1("*", "eva_x_act", "estudiante", "perso_x_materia", "subactividad", "actividad", "evaluacion", "A.id_perso_mate = " . $id_materia, "F.id_evaluacion = " . $evaluacion);
 			$response_1 = $this->model->getDataModelWhere("*", "actividad", "id_evaluacion = " .$evaluacion);
-			$this->view->render2('Notas', $this, 'estudiantes', $response, $response_1);
+			$response_2 = $this->model->getDataModelWhere_4("*", "subactividad", "actividad", "evaluacion", "perso_x_materia", "A.id_perso_mate = " .$id_materia);
+			$this->view->render3('Notas', $this, 'estudiantes', $response, $response_1, $response_2);
 		}else{
 			header("Location:".URL);
 		}

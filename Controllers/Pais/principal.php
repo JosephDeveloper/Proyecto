@@ -3,7 +3,7 @@
 /**
 * 
 */
-class principal extends Controllers
+class Principal extends Controllers
 {
 	
 	function __construct()
@@ -11,7 +11,7 @@ class principal extends Controllers
 		parent::__construct();
 	}
 
-	function principal(){
+	function Principal(){
 		$userName =  Session::getSession("Usuario");
 		if ($userName != "" && $userName["id_rol"] == 1){
 			$response = $this->model->getDataModel("*","pais");

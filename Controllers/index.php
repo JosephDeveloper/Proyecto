@@ -55,8 +55,7 @@ if (file_exists($controllersPath)) {
             /*if (isset($params) && isset($params_1)) {
                 //Ejecutamos el metodo que resiva el parametro
                 $controller->{$method}($params, $params_1);
-            } else*/
-            if (isset($params)){
+            } else*/ if (isset($params)){
                 $controller->{$method}($params);
             } else {
                 $controller->{$method}();

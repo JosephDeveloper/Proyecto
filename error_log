@@ -1,0 +1,42 @@
+[23-Nov-2017 01:39:31 Europe/Madrid] PHP Warning:  require(./Views/Pais/principal/principal.php): failed to open stream: No such file or directory in /home/f584e426/public_html/Library/Views.php on line 19
+[23-Nov-2017 01:39:31 Europe/Madrid] PHP Fatal error:  require(): Failed opening required './Views/Pais/principal/principal.php' (include_path='.:/home/f584e426/php:/opt/php7.0/lib/php') in /home/f584e426/public_html/Library/Views.php on line 19
+[23-Nov-2017 01:43:28 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:43:38 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:43:58 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->Principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:44:30 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->Principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:46:11 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->Principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:46:37 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->Principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:46:47 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->Principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17
+[23-Nov-2017 01:46:56 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function getDataModel() on null in /home/f584e426/public_html/Controllers/Pais/principal.php:17
+Stack trace:
+#0 /home/f584e426/public_html/index.php(59): Principal->Principal()
+#1 {main}
+  thrown in /home/f584e426/public_html/Controllers/Pais/principal.php on line 17

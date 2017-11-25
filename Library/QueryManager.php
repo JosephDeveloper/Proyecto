@@ -43,6 +43,27 @@ class QueryManager
         }
     }
 
+    public function select3($attr, $table, $table1, $table2, $table3, $where)
+    {
+        $query  = "SELECT " . $attr . " 
+                FROM " . $table . " AS A 
+                INNER JOIN " . $table1 . " AS B 
+                ON A.id_actividad = B.id_actividad 
+                INNER JOIN " . $table2 . " AS C 
+                ON B.id_evaluacion = C.id_evaluacion
+                INNER JOIN " . $table3 . " AS D 
+                ON A.id_perso_mate = D.id_perso_mate
+                WHERE " . $where . ";";
+        $result = $this->link->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            return $response;
+        }
+    }
+
     public function insert($table, $columns)
     {
         $columnas = null;
@@ -227,7 +248,7 @@ class QueryManager
         }
     }
 
-    public function selectEst_Mat_1($attr, $table, $table1, $table2, $where, $and)
+    public function selectEst_Mat_1($attr, $table, $table1, $table2, $table3, $table4, $table5, $where, $and)
     {
         $query = "SELECT " . $attr .
             " FROM " . $table . " AS A
@@ -235,6 +256,12 @@ class QueryManager
                 ON A.id_estudi = B.id_estudi
                 INNER JOIN " . $table2 . " AS C
                 ON A.id_perso_mate = C.id_perso_mate
+                INNER JOIN " . $table3 . " AS D
+                ON A.id_subActividad = D.id_subActividad
+                INNER JOIN " . $table4 . " AS E
+                ON D.id_actividad = E.id_actividad
+                INNER JOIN " . $table5 . " AS F
+                ON E.id_evaluacion = F.id_evaluacion
                 WHERE " . $where . "
                 AND " . $and . ";";
         $result = $this->link->query($query);

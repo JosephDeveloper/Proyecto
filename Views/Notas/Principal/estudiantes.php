@@ -1,3 +1,9 @@
+<style type="text/css">
+    .cabecera{
+        text-align: center;
+    }
+</style>
+
 <div class="panel-group col-sm-12">
     <div class="panel panel-primary" style="background-color: #EAE9E9;">
         <div class="panel-heading">
@@ -13,21 +19,49 @@
                             <th>Nombre</th>
                             <th>Documento</th>
                             <?php foreach ($array1 as $key => $value_1) { ?>
-                                <th><?php echo $value_1["des_actividad"]; ?></th>                                
+                                <th class="cabecera"><?php echo $value_1["des_actividad"]; ?></th>
                             <?php } ?>
                         </tr>
                     </thead>
-                    <tbody>  
-                    <?php foreach ($array as $key => $value){ ?>
-                            <tr>
-                                <td><?php echo $value["id_estudi"]; ?></td>
-                                <td><?php echo $value["nom_estudi"] . " " . $value["ape_estudi"]; ?></td>
-                                <td><?php echo $value["doc_estudi"]; ?></td>
-                                
-                                    <!-- <a href="<?php echo URL.'Notas/Principal/materia'?>">Calificar</a> -->
-                                
-                            </tr>
-                    <?php } ?>
+                    <tbody>
+                    <?php foreach ($array as $key => $value)
+                    { 
+                    ?>
+                        <tr>
+                            <td><?php echo $value["id_estudi"]; ?></td>
+                            <td><?php echo $value["nom_estudi"] . " " . $value["ape_estudi"]; ?></td>
+                            <td><?php echo $value["doc_estudi"]; ?></td>
+                            <!-- <a href="<?php echo URL.'Notas/Principal/materia'?>">Calificar</a> -->                                
+                    <?php
+                        foreach ($array1 as $key => $value_1)
+                        {
+                            $cont = 0;
+                            $act = 0;
+                            foreach ($array2 as $key => $value_2)
+                            {
+                                if ($value_2["id_actividad"] == $value_1["id_actividad"]){
+                                    $cont++;
+                                    if ($cont == 1)
+                                    {
+                                        $act++;
+                                    ?>
+                                        <td align="center">
+                                            <input type="text" name="actividad" id="actividad" class="form-control" size="1" codigo="<?php echo $value_2["id_actividad"]; ?>" value="<?php echo ($value['id_actividad'] == $value_2['id_actividad']) ? $value['nota'] : '0'; ?>"></input>
+                                    <?php 
+                                    } else 
+                                    { ?>
+                                            <input type="text" name="actividad" id="actividad" class="form-control" size="1" codigo="<?php echo $value_2["id_actividad"]; ?>" value="<?php echo ($value['id_actividad'] == $value_2['id_actividad']) ? $value['nota'] : '0'; ?>"></input>
+                                    <?php 
+                                    }
+                                }
+                            }
+                            echo "</td>";
+                        }
+                    ?>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                     </tbody>
                 </table>
             </div>
